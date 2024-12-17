@@ -1,0 +1,848 @@
+@import url('https://fonts.cdnfonts.com/css/copperplate-gothic-std');
+:root {
+  --primary-color: #ffc107; /* Golden yellow for accents */
+  --secondary-color: #e0a96d; /* Light brownish gold */
+  --background-color: #1e1612; /* Dark, warm brown background */
+  --form-background-color: #333; /* Dark gray for form background */
+  --input-background: white; /* Dark background for input fields */
+  --light-text-color: #f5f5f5; /* Light text color for dark backgrounds */
+  --button-background: #1e1612; /* Button background */
+  --button-hover-background: #ffc107; /* Golden yellow on hover */
+}
+
+.login-Container {
+  background-color: var(--background-color);
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  color: var(--light-text-color); /* Light text color */
+}
+
+/* Background container styling */
+.bg-con1 {
+  background-color: var(--form-background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 65vh;
+  width: 40%;
+  border-radius: 12px; /* Adjusted for consistency */
+  margin: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Form styling */
+form {
+  background-color: #ddd;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Aligns elements inside the form to center */
+}
+
+.MuiTextField-root {
+  margin-bottom: 20px !important;
+  width: 100%; /* Ensures text fields take full width */
+  background-color: var(--input-background); /* Input background for contrast */
+  color: var(--light-text-color); /* Input text color */
+}
+
+/* Typography styles */
+.MuiTypography-root {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--light-text-color);
+}
+
+/* Button styling */
+.MuiButton-containedPrimary {
+  width: 100%;
+  padding: 10px 0;
+  background-color: var(--button-background);
+  color: var(--light-text-color);
+  font-size: 16px;
+  border-radius: 20px; /* Rounded corners for buttons */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.MuiButton-containedPrimary:hover {
+  background-color: var(--button-hover-background); /* Change on hover */
+  color: black;
+}
+
+/* Secondary button styling (if needed) */
+.MuiButton-containedSecondary {
+  width: 100%;
+  padding: 10px 0;
+  background-color: var(--button-background);
+  color: var(--light-text-color);
+  font-size: 16px;
+}
+
+.MuiButton-containedSecondary:hover {
+  background-color: var(--button-hover-background);
+}
+
+@media (max-width: 768px) {
+  .Container {
+      padding: 15px;
+  }
+
+  form {
+      width: 100%;
+      padding: 20px;
+  }
+
+  .MuiTypography-root {
+      font-size: 18px; /* Adjusted for smaller screens */
+  }
+}
+
+
+
+
+/* Register.js */
+.reg-Container {
+  background-color: #1e1612; /* Dark, warm brown background */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+/* Background container styling */
+.reg-bg-con {
+  background-color: rgba(51, 51, 51, 0.9); /* Dark gray for contrast */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh; /* Adjusted height to be larger than the form */
+  width: 40%;
+  border-radius: 12px; /* Rounded corners for consistency */
+  padding: 20px; /* Add padding around the content */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Form styling */
+.reg-form {
+  background-color: #ddd; /* Dark gray for form background */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; /* Width of the form box */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Aligns elements inside the form to center */
+}
+
+.MuiTextField-root {
+  margin-bottom: 20px !important;
+  width: 100%; /* Ensures text fields take full width */
+  background-color: white; /* Dark background for input fields */
+  color: #f5f5f5; /* Light text color for input */
+}
+
+/* Typography styles */
+.MuiTypography-root {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f5f5f5; /* Change text color to light for better contrast */
+}
+
+/* Button styling */
+.MuiButton-containedPrimary {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #1e1612; /* Dark brown button color */
+  color: #f5f5f5; /* Light text color */
+  font-size: 16px;
+  border-radius: 20px; /* Rounded corners for buttons */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.MuiButton-containedPrimary:hover {
+  background-color: #ffc107; /* Golden yellow on hover */
+  color: black;
+}
+
+/* Display Error Message */
+.MuiTypography-colorError {
+  color: #ffc107; /* Error color */
+  margin-top: 15px;
+}
+
+/* Display Success Message */
+.success-message {
+  color: green;
+  margin-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .reg-Container {
+      padding: 15px;
+  }
+
+  .reg-bg-con {
+      width: 95%; /* Adjusted for smaller screens */
+      height: auto; /* Allow height to adjust automatically */
+  }
+
+  .reg-form {
+      width: 100%;
+      padding: 20px;
+  }
+}
+
+
+
+/* Workshop.js  */
+/* Background for Workshop Section */
+.bg-wshp {
+  background-color: #1e1612; /* Dark, warm brown background */
+  background-size: cover;
+  min-height: 100vh;
+}
+
+/* Workshop Container Styling */
+.wshp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  gap: 20px;
+}
+
+/* Individual Workshop Card */
+.wsp-card {
+  background-color: #333; /* Dark gray for card background */
+  border: 2px solid #4f3725; /* Warm brown border */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Soft shadow for depth */
+  text-align: center;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+  margin: 5px;
+}
+
+/* Card Hover Effect */
+.wsp-card:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  background-color: #4f3725; /* Darker brown on hover */
+}
+
+/* Workshop Heading */
+.wsp-head {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffc107; /* Golden yellow for title */
+  margin-bottom: 10px;
+}
+
+/* Workshop Status */
+.wsp-status {
+  font-size: 18px;
+  font-weight: 500;
+  color: #e0a96d; /* Light brownish gold for availability status */
+  margin-bottom: 15px;
+  font-family: 'Copperplate Gothic', sans-serif;
+}
+
+/* Button Styling */
+.wsp-btn {
+  background-color: #1e1612; /* Dark brown button color */
+  color: white;
+  border: none;
+  padding: 10px 80px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.wsp-btn:hover {
+  background-color: #ffc107; /* Golden yellow on hover */
+  color: black;
+}
+
+/* Typography for the Section Heading */
+.wsheading {
+  margin-top: 10px;
+  width: 100%;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffc107; /* Golden yellow for heading */
+  font-weight: bold;
+  padding: 5px;
+}
+
+.search-row {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-input {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+
+
+
+/* aboutus.js */
+
+/* General Container Styling */
+/* Main Container for About Us Page */
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(rgba(30, 22, 18, 0.9), rgba(30, 22, 18, 0.9)), 
+              url('/src/components/images/background3.jpg') no-repeat center center/cover;
+  padding: 50px;
+  color: #f5f5f5; /* Light text color for dark background */
+}
+
+/* Wrapper Styling */
+.about-wrapper {
+  background: rgba(51, 51, 51, 0.9); /* Dark gray background for contrast */
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Heading Styling */
+.about-heading {
+  text-align: center;
+  font-size: 36px;
+  color: #ffc107; /* Golden yellow for title */
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Copperplate Gothic"; /* Font for a premium look */
+}
+
+/* Section Styling */
+.about-section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 28px;
+  color: #e0a96d; /* Lighter brown-gold for section headers */
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.section-text {
+  font-size: 18px;
+  color: #f5f5f5; /* Light text for readability */
+  line-height: 1.6;
+}
+
+/* Team Section */
+.team-section {
+  margin-top: 40px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Team Member Styling */
+.team-member {
+  text-align: center;
+  padding: 15px;
+  background-color: transparent;
+  border-radius: 10px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); Subtle shadow for depth */
+}
+
+.team-member svg {
+  fill: #ffc107; /* Golden yellow for LinkedIn icon */
+  margin-bottom: 10px;
+  transition: fill 0.3s ease;
+}
+
+.team-member svg:hover {
+  fill: #e0a96d; /* Slight color change on hover */
+}
+
+.team-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffc107;
+  margin-top: 10px;
+}
+
+.team-role {
+  font-size: 16px;
+  color: #bbb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-heading {
+      font-size: 28px;
+  }
+
+  .section-title {
+      font-size: 24px;
+  }
+
+  .section-text {
+      font-size: 16px;
+  }
+}
+
+  
+  /* Workshop.js */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+  }
+  
+  .modal-actions button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .registration-status {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: green;
+  }
+  
+
+
+
+  /* Container Styling */
+/* Main Container for Workshop Page */
+.workshop-container {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1e1612; /* Dark brown background */
+  padding-top: 20px;
+  min-height: 100vh;
+  background-size: cover;
+}
+
+/* Header Styling */
+.workshop-header {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.workshop-header h1 {
+  color: #ffc107; /* Golden yellow for title */
+  font-size: 36px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Copperplate Gothic";
+  font-weight: bold;
+}
+
+/* Workshop Card Container */
+.wshp-card-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Workshop Card Styling */
+.workshop-card {
+  background-color: #333; /* Dark gray for card background */
+  border-radius: 12px;
+  display: flex;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Left Section (Information) */
+.workshop-info {
+  flex: 1;
+  padding: 20px;
+}
+
+.workshop-info h2 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffc107; /* Golden yellow for heading */
+  margin-bottom: 10px;
+}
+
+.workshop-info h3 {
+  font-size: 20px;
+  color: #e0a96d; /* Lighter brown-gold for section headers */
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.workshop-info ul {
+  list-style-type: square;
+  margin: 0;
+  padding: 0 20px;
+  color: #f5f5f5;
+}
+
+.workshop-info ul li {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.workshop-info p {
+  font-size: 18px;
+  color: #f5f5f5;
+  margin-top: 15px;
+}
+
+/* Right Section (Image & Button) */
+.workshop-image {
+  text-align: center;
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.workshop-image img {
+  width: 300px;  /* Set image width for better scaling */
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Soft shadow for depth */
+}
+
+/* Button Styling */
+.workshop-btn {
+  background-color: #ffc107; /* Golden yellow for button */
+  color: #333;
+  border: none;
+  padding: 12px 60px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.workshop-btn:hover {
+  background-color: #e0a96d; /* Slightly darker on hover */
+  color: #1e1612; /* Darker text for contrast */
+}
+
+  
+
+
+  /* Admin.js */
+/* Container Styling */
+.admin-container {
+  font-family: Arial, sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #333333; /* Dark background for contrast */
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.admin-header { /* Dark brown background */
+  padding: 10px;
+  text-align: center; /* Bright green text color */
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.admin-header h1 {
+  font-family: 'Copperplate Gothic';
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* Table Styling */
+.workshop-table-container {
+  display: flex;
+  justify-content: center;
+}
+
+.workshop-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.workshop-table th, .workshop-table td {
+  border: 2px solid black; /* Dark brown border */
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.workshop-table th {
+  background-color: black; /* Dark brown header */
+  color: #ffc107; /* White text color */
+  font-weight: bold;
+}
+
+.workshop-table td {
+  background-color: #333333; /* Dark gray background */
+  color: #fff; /* Green text color */
+}
+
+/* Button Styling */
+.create-workshop-btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.create-workshop-btn {
+  background-color: #1e1612; /* Dark brown button color */
+  color: white;
+  border: none;
+  padding: 10px 80px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.create-workshop-btn:hover {
+  background-color: #ffc107; /* Golden yellow on hover */
+  color: black;
+}
+
+/* Loading and Error Messages */
+.loading, .error {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #00ff00; /* Bright green text color */
+  margin-top: 20px;
+}
+
+.error {
+  color: #ff6b6b; /* Red color for error messages */
+}
+
+
+  
+  /* General container styling */
+  .upload-container {
+    background-color: #1e1612; /* Dark, warm brown background */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+/* Background container styling */
+.upload-bg-con {
+    background-color: rgba(51, 51, 51, 0.9); /* Dark gray for contrast */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Allow the height to adjust based on content */
+    width: 40%; /* Width for the form */
+    max-width: 600px; /* Max width for larger screens */
+    border-radius: 12px; /* Rounded corners */
+    padding: 30px; /* Increased padding around content */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Form styling */
+.upload-form {
+    width: 100%; /* Full width for the form */
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+}
+
+/* Message styling */
+.message {
+    color: #ffc107; /* Golden yellow for messages */
+    margin-bottom: 15px;
+}
+
+/* Typography styles */
+.MuiTypography-root {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff; /* Change text color to white for better contrast */
+}
+
+/* Button styling */
+.MuiButton-containedPrimary {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #1e1612; /* Dark brown button color */
+    color: #f5f5f5; /* Light text color */
+    font-size: 16px;
+    border-radius: 20px; /* Rounded corners for buttons */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.MuiButton-containedPrimary:hover {
+    background-color: #ffc107; /* Golden yellow on hover */
+    color: black;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .upload-container {
+        padding: 15px;
+    }
+
+    .upload-bg-con {
+        width: 95%; /* Adjusted for smaller screens */
+        height: auto; /* Allow height to adjust automatically */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.unauthenticated-container {
+  text-align: center;
+  background-color: #1e1612;
+  min-height: 100vh;
+}
+.unauthenticated-message {
+  color: red;
+  font-family: 'Arial, sans-serif';
+  font-size: 24px;
+}
+
+.login-button-container {
+  margin-top: 20px;
+}
+
+.login-button {
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* Profile Page */
+.profile-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-heading {
+  color: var(--primary-color);
+  font-family: 'Copperplate Gothic', Arial, sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.profile-details {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.profile-label {
+  color: var(--blue-color);
+  font-weight: bold;
+}
+
+.profile-details p {
+  margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .profile-heading {
+    font-size: 24px;
+  }
+
+  .profile-details p {
+    font-size: 14px;
+  }
+}

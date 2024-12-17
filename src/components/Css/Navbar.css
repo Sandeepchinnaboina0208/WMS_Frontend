@@ -1,0 +1,178 @@
+/* General Navbar Styling */
+.navbar {
+  background: linear-gradient(135deg, #1e1612, #333);
+  color: white;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* Left and Right Links */
+.navbar-left, .navbar-right {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-left li, .navbar-right li {
+  margin: 0 30px;
+}
+
+.navbar-left a, .navbar-right a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  position: relative;
+}
+
+/* Hover Effect */
+.navbar-left a:hover, .navbar-right a:hover {
+  color: #ffc107;
+  border-bottom: 2px solid #ffc107;
+  transform: scale(1.05);
+}
+
+/* Center Title/Logo Styling */
+.navbar-logo {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  background: linear-gradient(135deg, #ffc107, #ff5722);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 8px rgba(255, 87, 34, 0.5);
+  transition: transform 0.3s;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile Toggle Button (Hamburger Icon) */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar-toggle-bar {
+  width: 28px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* Dropdown Menu for Mobile */
+.dropdown-menu {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background: #1e1612;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+  border-top: 1px solid #333;
+  padding: 20px 0;
+  z-index: 99;
+  display: none;
+  animation: dropdownFadeIn 0.5s ease-out; /* Add fade-in animation */
+}
+
+.dropdown-menu ul {
+  list-style: none;
+}
+
+.dropdown-menu ul li {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.dropdown-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.dropdown-menu ul li a:hover {
+  color: #ffc107;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar-left, .navbar-right {
+      display: none;
+  }
+
+  .navbar-logo {
+      margin: 0 auto;
+  }
+
+  .navbar-toggle {
+      display: flex;
+  }
+
+  .dropdown-menu {
+      display: block;
+  }
+}
+
+/* Dynamic Dropdown Styles */
+select#loginRegisterDropdown, select#loginRegisterDropdownadmin {
+  background: transparent;
+  color: #fff;
+  border: 0;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-transform: uppercase;
+}
+
+select#loginRegisterDropdown:hover, select#loginRegisterDropdownadmin:hover {
+  background: #333;
+  color: #ffc107;
+}
+
+/* Dropdown Styling */
+select#loginRegisterDropdown option, select#loginRegisterDropdownadmin option {
+  background: #1e1612;
+  color: white;
+  padding: 10px;
+  border: 0;
+}
+
+select#loginRegisterDropdown option:hover, select#loginRegisterDropdownadmin option:hover {
+  background: #ffc107;
+  color: #1e1612;
+}
+
+/* Keyframe animation for dropdown fade-in */
+@keyframes dropdownFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); /* Slight upward motion */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Final position */
+  }
+}
